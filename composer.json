@@ -1,13 +1,12 @@
 {
-    "name": "guidebox/crawler",
-    "description": "A base webcrawler for adding new data into Guidebox.",
+    "name": "brianseitel/cachet",
+    "description": "A simple PHP wrapper for CacheHQ",
     "authors": [
         {
             "name": "Brian Seitel",
-            "email": "brian@guidebox.com"
+            "email": "brianseitel@gmail.com"
         }
     ],
-    "homepage": "https://api.guidebox.com/apidocs",
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
