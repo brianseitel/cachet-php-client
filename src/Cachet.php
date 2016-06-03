@@ -2,6 +2,8 @@
 
 namespace Cachet;
 
+use Exception;
+
 class Cachet
 {
 
@@ -15,10 +17,12 @@ class Cachet
 
     public function __construct($version, $token, $base_url = 'localhost')
     {
-        if (!is_null($token)) {
-            $this->token = $token;
+        if (!$token) {
+            throw new Exception('Token required for Cachet use.');
         }
-        $this->version = $version;
+
+        $this->token = $token;
+        $this->version = $version ?: 1;
         $this->base_url = $base_url;
     }
 
@@ -45,6 +49,11 @@ class Cachet
     public function components()
     {
         return new Resources\Component($this);
+    }
+
+    public function componentGroups()
+    {
+        return new Resources\Component\Groups\Group($this);
     }
 
     public function incidents()

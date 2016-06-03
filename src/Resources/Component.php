@@ -50,4 +50,18 @@ class Component extends Resource
             'DELETE'
         );
     }
+
+    public function findOrCreate($name)
+    {
+        $components = $this->all()->response;
+
+        foreach ($components as $component) {
+            if ($component['name'] == $name) {
+                return $component;
+            }
+        }
+
+        return $this->create(['name' => $name])->response;
+    }
+
 }

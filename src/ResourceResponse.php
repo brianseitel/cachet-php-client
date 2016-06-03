@@ -11,7 +11,8 @@ class ResourceResponse
 
     public function __construct($response)
     {
-        $this->response = json_decode((string) $response->getBody(), 1);
+        $raw_response = json_decode((string) $response->getBody(), 1);
+        $this->response = $raw_response['data'];
         $this->statusCode = $response->getStatusCode();
         $this->status = $this->processStatus($this->response);
     }
