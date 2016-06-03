@@ -50,4 +50,17 @@ class Metric extends Resource
             'DELETE'
         );
     }
+
+    public function findOrCreate($data)
+    {
+        $metrics = $this->all()->response;
+
+        foreach ($metrics as $metric) {
+            if ($metric['name'] == $data['name']) {
+                return $metric;
+            }
+        }
+
+        return $this->create($data)->response;
+    }
 }
