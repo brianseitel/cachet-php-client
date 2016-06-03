@@ -65,4 +65,9 @@ class Cachet
     {
         return new Resources\Metric($this);
     }
+
+    public function metricsPoints()
+    {
+        return new Resources\Points\Point($this);
+    }
 }
