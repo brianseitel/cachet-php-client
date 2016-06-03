@@ -23,7 +23,7 @@ abstract class Resource
         try {
             $response = $this->client->send($request, ['form_params' => $data]);
         } catch (GuzzleException $e) {
-            $responseErrorBody = strval($e->getResponse()->getBody());
+            $responseErrorBody = json_decode($e->getResponse()->getBody(), 1);
             $statusCode = $e->getResponse()->getStatusCode();
 
             $error = json_decode($responseErrorBody);
@@ -31,6 +31,8 @@ abstract class Resource
                 throw new Exception($error->error);
             }
             return null;
+        } catch (Exception $e) {
+            throw new Exception((string) $e->getResponse()->getBody());
         }
 
         return new ResourceResponse($response);

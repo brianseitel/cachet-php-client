@@ -58,11 +58,11 @@ class Cachet
 
     public function incidents()
     {
-        return new Resources\Component($this);
+        return new Resources\Incident($this);
     }
 
     public function metrics()
     {
-        return new Resources\Component($this);
+        return new Resources\Metric($this);
     }
 }
