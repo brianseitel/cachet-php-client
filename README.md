@@ -16,7 +16,7 @@ Hi there! Welcome to the Cachet PHP Client. We have built a powerful set of tool
 ```php
 <?php
 
-$client = new \Cachet\Cachet(1, 'YOUR_TOKEN_HERE', 'http://status.seymour.guidebox.brian');
+$client = new \Cachet\Cachet(1, 'YOUR_TOKEN_HERE', 'http://localhost');
 
 $results = $client->base()->ping();
 
