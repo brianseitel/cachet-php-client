@@ -1,0 +1,22 @@
+{
+    "name": "guidebox/crawler",
+    "description": "A base webcrawler for adding new data into Guidebox.",
+    "authors": [
+        {
+            "name": "Brian Seitel",
+            "email": "brian@guidebox.com"
+        }
+    ],
+    "homepage": "https://api.guidebox.com/apidocs",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cachet\\": "src/"
+        }
+    }
+}
