@@ -8,7 +8,7 @@ Hi there! Welcome to the Cachet PHP Client. We have built a powerful set of tool
 
 * Install composer, if you haven't already. ([Composer Homepage](http://www.getcomposer.org))
 
-* Install dependencies: `composer require "brianseitel/cachet-client`
+* Install dependencies: `composer require "brianseitel/cachet-client"`
 
 
 ## Quickstart
