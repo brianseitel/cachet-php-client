@@ -13,7 +13,8 @@ class Incident extends Resource
     {
         return $this->sendRequest(
             $this->endpoint,
-            'GET'
+            'GET',
+            ['per_page' => 500]
         );
     }
 
